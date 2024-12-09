@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enkripsi RSA Kelompok 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">RSA Enkripsi</h1>
+        <div class="key-generation">
+            <h2>Generate Keys</h2>
+            <label for="p">P (Prime Number):</label>
+            <input type="number" id="p" required>
+            <label for="q">Q (Prime Number):</label>
+            <input type="number" id="q" required>
+            <label for="e">E:</label>
+            <input type="number" id="e" required>
+            <button onclick="showHint()">Hint E</button>
+            <button onclick="generateKeys()">Generate Keys</button>
+            <pre id="key-info"></pre>
+        </div>
+
+        <div class="encryption">
+            <h2>Enkripsi Pesan</h2>
+            <textarea id="plain-text" placeholder="Masukkan pesan yang ingin dienkripsi..."></textarea>
+            <button onclick="encryptMessage()">Enkripsi</button>
+            <h3>Hasil Enkripsi:</h3>
+            <pre id="encrypted-text"></pre>
+        </div>
+
+        <div class="decryption">
+            <h2>Dekripsi Pesan</h2>
+            <textarea id="cipher-text" placeholder="Masukkan pesan yang ingin didekripsi..."></textarea>
+            <button onclick="decryptMessage()">Dekripsi</button>
+            <h3>Hasil Dekripsi:</h3>
+            <pre id="decrypted-text"></pre>
+        </div>
+    </div>
+
+    <div id="popup-overlay" class="popup-overlay" onclick="closePopup()"></div>
+    <div id="popup" class="popup">
+        <h3>Valid E Values</h3>
+        <p id="hint"></p>
+        <button onclick="closePopup()">Tutup</button>
+    </div>
+
+    <script src="rsa.js"></script>
+</body>
+</html>
