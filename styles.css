@@ -74,3 +74,8 @@ textarea {
 .popup h3 {
     margin-top: 0;
 }
+.popup #hint {
+    max-height: 200px; /* Atur tinggi maksimum khusus untuk elemen konten */
+    max-width: 800px;
+    overflow-y: auto; /* Aktifkan scroll jika konten melebihi batas */
+}
